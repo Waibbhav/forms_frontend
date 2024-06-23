@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import {ElementRef, ViewChild, AfterViewInit } from '@angular/core';
+import { ElementRef, ViewChild, AfterViewInit } from '@angular/core';
 import { jsPDF } from 'jspdf';
 import autoTable from 'jspdf-autotable';
+import { DataTransferService } from '../services/datatransfer';
 
 @Component({
   selector: 'app-pdf',
@@ -9,14 +10,17 @@ import autoTable from 'jspdf-autotable';
   styleUrls: ['./pdf.component.css'],
 })
 export class PdfComponent {
- 
-
-  ngAfterViewInit(): void {
-
-  }
-
   title = 'jsPDF Example';
-  pdfSrc: any; // Variable to hold the PDF data URL
+  pdfSrc: any;
+  constructor(private DataTransferService: DataTransferService) {}
+
+  ngOnInit(): void {
+    this.DataTransferService.currentData.subscribe((item: any) => {
+      console.log(item);
+      this.generatePDF();
+      
+    });
+  }
 
   generatePDF() {
     const doc = new jsPDF();
@@ -25,7 +29,7 @@ export class PdfComponent {
     doc.text('User Information', 10, 10);
 
     autoTable(doc, {
-      head: [['Name', 'Email', 'Phone', 'Address']],
+      head: [['Name', 'Phone', 'Email', 'Address']],
       body: [
         ['Mark', 'mark.otto@example.com', '1234567890', '123 Main St'],
         ['Jacob', 'jacob.thornton@example.com', '0987654321', '456 Elm St'],
@@ -39,6 +43,4 @@ export class PdfComponent {
     // Optional: Log the data URL for testing
     console.log(this.pdfSrc);
   }
-
-
 }
