@@ -36,7 +36,6 @@ export class TableComponent {
 
   filterUsers() {}
 
-  editUser(id: any) {}
 
   deleteUser(id: any) {
     this.apiService.delete(`/user/delete/${id}`).subscribe((res: any) => {
