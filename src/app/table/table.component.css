@@ -1,7 +1,21 @@
-  .select,
+@import "~bootstrap/dist/css/bootstrap.min.css";
+.select,
   #locale {
     width: 100%;
   }
   .like {
     margin-right: 10px;
   }
+
+  .action-icon {
+  cursor: pointer;
+  margin-right: 10px; /* Adjust margin as needed */
+}
+
+.action-icon i {
+  margin-right: 5px; /* Space between icon and text */
+}
+
+.action-icon:hover {
+  color: #007bff; /* Change color on hover */
+}
