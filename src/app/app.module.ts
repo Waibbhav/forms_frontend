@@ -8,7 +8,7 @@ import { RouterModule } from '@angular/router';
 import { TableComponent } from './table/table.component'; 
 import { ApiService } from './services/api.service';
 import { PdfComponent } from './pdf/pdf.component';
-
+import { PdfViewerModule } from 'ng2-pdf-viewer';
 @NgModule({
   declarations: [AppComponent, FormComponent, TableComponent, PdfComponent],
   imports: [
@@ -16,6 +16,7 @@ import { PdfComponent } from './pdf/pdf.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    PdfViewerModule,
     RouterModule.forRoot([
       { path: 'form', component: FormComponent },
       { path: 'list', component: TableComponent },
