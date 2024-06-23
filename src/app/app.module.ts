@@ -16,8 +16,10 @@ import { PdfComponent } from './pdf/pdf.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    RouterModule.forRoot([{ path: 'form', component: FormComponent },
-         {path:'list' ,component:TableComponent}
+    RouterModule.forRoot([
+      { path: 'form', component: FormComponent },
+      { path: 'list', component: TableComponent },
+      { path: 'pdf', component: PdfComponent },
     ]),
   ],
   providers: [ApiService],
