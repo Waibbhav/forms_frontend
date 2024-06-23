@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ApiService } from '../services/api.service';
-
+import { RouterLink } from '@angular/router';
 @Component({
   selector: 'app-table',
   templateUrl: './table.component.html',

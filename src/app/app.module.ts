@@ -4,11 +4,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { FormComponent } from './form/form.component';
 import { HttpClientModule } from '@angular/common/http';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { TableComponent } from './table/table.component'; 
 import { ApiService } from './services/api.service';
 import { PdfComponent } from './pdf/pdf.component';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
+
 @NgModule({
   declarations: [AppComponent, FormComponent, TableComponent, PdfComponent],
   imports: [
