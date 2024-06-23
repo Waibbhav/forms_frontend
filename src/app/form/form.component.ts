@@ -15,7 +15,7 @@ export class FormComponent {
       name: new FormControl("",[Validators.required]),
       email: new FormControl("",[Validators.required, Validators.email]),
       address: new FormControl("",[Validators.required]),
-      mobile:new FormControl ("",[Validators.required, Validators.pattern('[0-9]{10}')]),
+      phone:new FormControl ("",[Validators.required, Validators.pattern('[0-9]{10}')]),
     });
   }
 
