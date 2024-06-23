@@ -17,6 +17,11 @@
         <td>{{ user.email }}</td>
         <td>{{ user.phone }}</td>
         <td>{{ user.address }}</td>
+        <td> 
+          <i class="fas fa-edit" (click)="editUser(user._id)"></i><br>
+          <i class="fas fa-trash" (click)="deleteUser(user._id)"></i><br>
+          <i class="fa fa-info-circle"(click)="detail(user._id)" ></i>
+        </td>
       </tr>
     </tbody>
   </table>

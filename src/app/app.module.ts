@@ -7,9 +7,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { TableComponent } from './table/table.component'; 
 import { ApiService } from './services/api.service';
+import { PdfComponent } from './pdf/pdf.component';
 
 @NgModule({
-  declarations: [AppComponent, FormComponent, TableComponent],
+  declarations: [AppComponent, FormComponent, TableComponent, PdfComponent],
   imports: [
     BrowserModule,
     FormsModule,
