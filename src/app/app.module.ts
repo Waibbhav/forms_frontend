@@ -9,9 +9,17 @@ import { TableComponent } from './table/table.component';
 import { ApiService } from './services/api.service';
 import { PdfComponent } from './pdf/pdf.component';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
+import { EditComponent } from './edit/edit.component';
+
 
 @NgModule({
-  declarations: [AppComponent, FormComponent, TableComponent, PdfComponent],
+  declarations: [
+    AppComponent,
+    FormComponent,
+    TableComponent,
+    PdfComponent,
+    EditComponent,
+  ],
   imports: [
     BrowserModule,
     FormsModule,
@@ -19,9 +27,11 @@ import { PdfViewerModule } from 'ng2-pdf-viewer';
     HttpClientModule,
     PdfViewerModule,
     RouterModule.forRoot([
+      { path: '', component: TableComponent },
       { path: 'form', component: FormComponent },
-      { path: 'list', component: TableComponent },
       { path: 'pdf', component: PdfComponent },
+      { path: 'edit/:id', component: EditComponent },
+
     ]),
   ],
   providers: [ApiService],
