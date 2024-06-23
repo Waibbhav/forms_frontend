@@ -1,0 +1,39 @@
+.pdf-container {
+  max-width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.pdf-title {
+  text-align: center;
+  font-size: 2em;
+  color: #343a40;
+  margin-bottom: 20px;
+}
+
+.download-button {
+  display: block;
+  width: 150px;
+  margin: 0 auto 20px auto;
+  padding: 10px 20px;
+  font-size: 1.2em;
+}
+
+.pdf-viewer-container {
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #ffffff;
+}
+
+pdf-viewer {
+  border: none;
+}
+
+.download-button:hover {
+  background-color: #0056b3;
+  color: #ffffff;
+}
