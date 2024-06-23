@@ -8,6 +8,7 @@ import {
 import { ApiService } from '../services/api.service';
 import { RouterLink } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-edit',
   templateUrl: './edit.component.html',
@@ -17,7 +18,11 @@ export class EditComponent {
   userForm!: FormGroup;
   userId: string | null = null;
   userData: any;
-  constructor(private apiService: ApiService, private route: ActivatedRoute) {}
+  constructor(
+    private apiService: ApiService,
+    private route: ActivatedRoute,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.route.paramMap.subscribe((params) => {
@@ -55,6 +60,7 @@ export class EditComponent {
       this.apiService.post('/user/update', this.userForm.value).subscribe(
         (res: any) => {
           this.apiService.alert(res.message, 'success');
+           this.router.navigate(['/']);
         },
         (error) => {
           this.apiService.alert('Failed to update user account', 'error');

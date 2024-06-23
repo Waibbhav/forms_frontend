@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { jsPDF } from 'jspdf';
 import autoTable from 'jspdf-autotable';
 import { DataTransferService } from '../services/datatransfer';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-pdf',
   templateUrl: './pdf.component.html',
@@ -13,10 +13,16 @@ export class PdfComponent implements OnInit {
   pdfSrc: any;
   pdfData: any = [];
 
-  constructor(private dataTransferService: DataTransferService) {}
+  constructor(
+    private dataTransferService: DataTransferService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.dataTransferService.currentData.subscribe((item: any) => {
+      if (!item) {
+         this.router.navigate(['/']);
+      }
       for (let data of item.userData) {
         let rowArray: any = [];
         for (const key in data) {
