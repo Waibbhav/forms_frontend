@@ -15,7 +15,9 @@ import { ApiService } from './services/api.service';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    RouterModule.forRoot([{ path: 'form', component: FormComponent }]),
+    RouterModule.forRoot([{ path: 'form', component: FormComponent },
+         {path:'list' ,component:TableComponent}
+    ]),
   ],
   providers: [ApiService],
   bootstrap: [AppComponent],

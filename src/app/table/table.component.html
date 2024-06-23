@@ -1,1 +1,32 @@
-<p>table works!</p>
+<div>
+  <h1>{{ title }}</h1>
+  <input type="text" [(ngModel)]="searchTerm" (keyup)="filterUsers()" placeholder="Search...">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Phone</th>
+        <th scope="col">Address</th>
+         <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of userData">
+        <td>{{ user.name }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.phone }}</td>
+        <td>{{ user.address }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="pagination">
+    <!-- <button *ngFor="let page of [].constructor(Math.ceil(filteredUsers.length / rowsPerPage)); let i = index"
+            (click)="changePage(i + 1)">
+      {{ i + 1 }}
+    </button> -->
+       <button>
+      {{ 1 }}
+    </button>
+  </div>
+</div>
