@@ -12,11 +12,27 @@ import { DataTransferService } from '../services/datatransfer';
 export class PdfComponent {
   title = 'jsPDF Example';
   pdfSrc: any;
+  pdfData:any=[]
   constructor(private DataTransferService: DataTransferService) {}
 
   ngOnInit(): void {
     this.DataTransferService.currentData.subscribe((item: any) => {
-      console.log(item);
+
+    
+      for (let data of item.userData) {
+        let rowArray: any = []
+        for (const key in data) {
+
+          if (key == "name" || key == "phone" || key == "email" || key == "address") {
+             rowArray.push(data[key]);
+          } 
+        }
+       this.pdfData.push(rowArray);
+        rowArray=[]
+      }
+
+      console.log(this.pdfData);
+      
       this.generatePDF();
       
     });
@@ -30,11 +46,7 @@ export class PdfComponent {
 
     autoTable(doc, {
       head: [['Name', 'Phone', 'Email', 'Address']],
-      body: [
-        ['Mark', 'mark.otto@example.com', '1234567890', '123 Main St'],
-        ['Jacob', 'jacob.thornton@example.com', '0987654321', '456 Elm St'],
-        ['Larry', 'larry.thebird@example.com', '1112223333', '789 Pine St'],
-      ],
+      body: this.pdfData,
     });
 
     // Convert the PDF to a data URL
