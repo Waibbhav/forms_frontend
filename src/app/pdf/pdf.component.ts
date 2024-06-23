@@ -1,14 +1,22 @@
 import { Component } from '@angular/core';
+import {ElementRef, ViewChild, AfterViewInit } from '@angular/core';
 import { jsPDF } from 'jspdf';
-import autoTable from 'jspdf-autotable'; // 
+import autoTable from 'jspdf-autotable';
+
 @Component({
   selector: 'app-pdf',
   templateUrl: './pdf.component.html',
   styleUrls: ['./pdf.component.css'],
 })
 export class PdfComponent {
+ 
+
+  ngAfterViewInit(): void {
+
+  }
+
   title = 'jsPDF Example';
-  pdfSrc:any; // Variable to hold the PDF data URL
+  pdfSrc: any; // Variable to hold the PDF data URL
 
   generatePDF() {
     const doc = new jsPDF();
@@ -31,4 +39,6 @@ export class PdfComponent {
     // Optional: Log the data URL for testing
     console.log(this.pdfSrc);
   }
+
+
 }
