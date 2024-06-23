@@ -21,7 +21,7 @@ export class PdfComponent implements OnInit {
         let rowArray: any = [];
         for (const key in data) {
           if (
-            key == 'name' ||
+            key == 'fullName' ||
             key == 'phone' ||
             key == 'email' ||
             key == 'address'
