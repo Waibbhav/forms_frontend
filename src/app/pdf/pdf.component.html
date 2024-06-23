@@ -1,6 +1,7 @@
 <div class="pdf-container">
   <h1 class="pdf-title">{{ title }}</h1>
   <button class="btn btn-primary download-button" (click)="downloadPDF()">Download</button>
+
   <div class="pdf-viewer-container">
     <pdf-viewer
       [src]="pdfSrc"
@@ -18,4 +19,5 @@
       style="width: 100%; height: 600px"
     ></pdf-viewer>
   </div>
+    <button class="btn btn-primary " routerLink="/list">back</button>
 </div>
