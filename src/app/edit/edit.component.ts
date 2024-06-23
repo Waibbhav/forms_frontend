@@ -32,8 +32,9 @@ export class EditComponent {
 
   formInit() {
     this.userForm = new FormGroup({
-      fullName: new FormControl(this.userData?.fullName || '', [Validators.required]),
-      
+      fullName: new FormControl(this.userData?.fullName || '', [
+        Validators.required,
+      ]),
       email: new FormControl(this.userData?.email || '', [
         Validators.required,
         Validators.email,
@@ -50,7 +51,7 @@ export class EditComponent {
 
   submitForm(): void {
     if (this.userForm.valid) {
-      this.userForm.value.id = this.userId
+      this.userForm.value.id = this.userId;
       this.apiService.post('/user/update', this.userForm.value).subscribe(
         (res: any) => {
           this.apiService.alert(res.message, 'success');
