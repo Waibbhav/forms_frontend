@@ -3,16 +3,16 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { FormComponent } from './form/form.component';
-import { RouterModule } from '@angular/router'; 
+import { RouterModule } from '@angular/router';
+import { TableComponent } from './table/table.component'; 
 @NgModule({
-  declarations: [AppComponent, FormComponent],
+  declarations: [AppComponent, FormComponent, TableComponent],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
-      // Configure the router
-      { path: '', component: FormComponent }, // Define your routes
+      { path: 'form', component: FormComponent }, 
     ]),
   ],
   providers: [],
