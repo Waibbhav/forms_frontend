@@ -35,7 +35,7 @@ import { DetailComponent } from './detail/detail.component';
       { path: 'form', component: FormComponent },
       { path: 'pdf', component: PdfComponent },
       { path: 'edit/:id', component: EditComponent },
-
+      { path: 'detail/:id', component: DetailComponent },
     ]),
     BrowserAnimationsModule,
   ],
