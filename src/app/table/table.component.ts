@@ -56,7 +56,7 @@ export class TableComponent {
 
   edit(id: any) {
     this.apiService
-      .alertModal('Your sure you want to delete.', 'success')
+      .alertModal('Your sure you want to edit.', 'success')
       .then((result) => {
         if (result.isConfirmed) {
           this.router.navigate([`/edit/${id}`]);
