@@ -22,3 +22,11 @@
 .action-icon:hover {
   color: #007bff; /* Change color on hover */
 }
+
+#tableContainer{
+padding: 20px;
+}
+
+#tableContainer h1{
+  text-align: center;
+}

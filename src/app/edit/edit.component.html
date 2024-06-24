@@ -1,6 +1,6 @@
 <div class="container">
   <h2 class="heading">Edit User</h2>
-  <form [formGroup]="userForm" (ngSubmit)="submitForm()">
+  <form [formGroup]="userForm" (ngSubmit)="submitForm()" class="formContainer">
 
     <div class="form-group">
       <label for="fullName">Full Name</label>
@@ -33,7 +33,10 @@
         Please enter a valid phone number.
       </div>
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
-    <button type="button" class="btn btn-secondary ml-2" routerLink="/">Back</button>
+    <div class="button-group">
+      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="button" class="btn btn-secondary ml-2" routerLink="/">Back</button>
+
+    </div>
   </form>
 </div>

@@ -13,6 +13,7 @@
 
 .user-card {
   margin: 20px 0;
+  padding: 10px;
 }
 
 .mat-card-header {
@@ -62,4 +63,8 @@ button mat-icon {
 .btn-blue {
   background-color: #2196f3;
   color: white;
+}
+.button-group{
+  display: flex;
+  gap:20px;
 }
