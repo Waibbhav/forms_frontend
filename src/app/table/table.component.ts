@@ -46,10 +46,17 @@ export class TableComponent {
 
 
   deleteUser(id: any) {
-    this.apiService.delete(`/user/delete/${id}`).subscribe((res: any) => {
-      this.apiService.alert('User Deleted successfully', 'success');
-      this.fetchUser('');
+
+ 
+    this.apiService.alertModal('Your sure you want to delete.', 'success').then((result) => {
+      if (result.isConfirmed) {
+        this.apiService.delete(`/user/delete/${id}`).subscribe((res: any) => {
+          this.apiService.alert('User Deleted successfully', 'success');
+          this.fetchUser('');
+        });
+      }
     });
+  
   }
 
 
