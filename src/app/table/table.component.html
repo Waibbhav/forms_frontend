@@ -35,6 +35,7 @@
       </tr>
     </tbody>
   </table>
+  <mat-paginator [length]="userData?.length" [pageSize]="10" (page)="onPageChange($event)"></mat-paginator>
   <button (click)="onClick()" class="btn btn-primary mb-3">Export PDF</button>
   <div class="pagination">
     <!-- Pagination buttons can be added here if needed -->

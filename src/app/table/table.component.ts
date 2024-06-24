@@ -18,7 +18,7 @@ export class TableComponent {
   ) {}
 
   ngOnInit(): void {
-    this.fetchUser();
+    this.fetchUser('');
   }
 
   onClick() {
@@ -26,22 +26,27 @@ export class TableComponent {
     this.router.navigate(['/pdf']);
   }
 
-  fetchUser() {
-    this.apiService.get('/user/get').subscribe((res: any) => {
+  fetchUser(search: any) {
+    this.apiService.get(`/user/get/?search=${search}`).subscribe((res: any) => {
       console.log(res.data.docs);
       this.userData = res.data.docs;
       this.apiService.alert(res.message, 'success');
     });
   }
 
-  filterUsers() {}
-
+  filterUsers() {
+    this.fetchUser(this.searchTerm);
+  }
 
   deleteUser(id: any) {
     this.apiService.delete(`/user/delete/${id}`).subscribe((res: any) => {
       this.apiService.alert('User Deleted successfully', 'success');
-      this.fetchUser();
+      this.fetchUser('');
     });
+  }
+
+  onPageChange(event:any) {
+    
   }
 
   detail(id: any) {}

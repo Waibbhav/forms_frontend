@@ -10,6 +10,7 @@ import { ApiService } from './services/api.service';
 import { PdfComponent } from './pdf/pdf.component';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { EditComponent } from './edit/edit.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -33,6 +34,7 @@ import { EditComponent } from './edit/edit.component';
       { path: 'edit/:id', component: EditComponent },
 
     ]),
+    BrowserAnimationsModule,
   ],
   providers: [ApiService],
   bootstrap: [AppComponent],
