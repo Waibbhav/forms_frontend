@@ -75,6 +75,6 @@ export class TableComponent {
   }
 
   detail(id: any) {
-    this.router.navigate([`/edit/${id}`]);
+    this.router.navigate([`/detail/${id}`]);
   }
 }
