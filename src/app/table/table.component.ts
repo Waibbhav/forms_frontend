@@ -29,8 +29,6 @@ export class TableComponent {
     this.router.navigate(['/pdf']);
   }
 
-
-
   fetchUser(search: any) {
     this.apiService.get(`/user/get/?search=${search}`).subscribe((res: any) => {
       this.pageLength = res.data.totalDocs;
@@ -39,35 +37,41 @@ export class TableComponent {
     });
   }
 
-
   filterUsers() {
     this.fetchUser(this.searchTerm);
   }
 
-
   deleteUser(id: any) {
-
- 
-    this.apiService.alertModal('Your sure you want to delete.', 'success').then((result) => {
-      if (result.isConfirmed) {
-        this.apiService.delete(`/user/delete/${id}`).subscribe((res: any) => {
-          this.apiService.alert('User Deleted successfully', 'success');
-          this.fetchUser('');
-        });
-      }
-    });
-  
+    this.apiService
+      .alertModal('Your sure you want to delete.', 'success')
+      .then((result) => {
+        if (result.isConfirmed) {
+          this.apiService.delete(`/user/delete/${id}`).subscribe((res: any) => {
+            this.apiService.alert('User Deleted successfully', 'success');
+            this.fetchUser('');
+          });
+        }
+      });
   }
 
+  edit(id: any) {
+    this.apiService
+      .alertModal('Your sure you want to delete.', 'success')
+      .then((result) => {
+        if (result.isConfirmed) {
+          this.router.navigate([`/edit/${id}`]);
+        }
+      });
+  }
 
   onPageChange(event: any) {
-      this.apiService
-        .get(`/user/get?page=${event?.pageIndex+1}&length=${event.pageSize}`)
-        .subscribe((res: any) => {
-          this.pageLength = res.data.totalDocs;
-          console.log(res.data.docs);
-          this.userData = res.data.docs;
-        });
+    this.apiService
+      .get(`/user/get?page=${event?.pageIndex + 1}&length=${event.pageSize}`)
+      .subscribe((res: any) => {
+        this.pageLength = res.data.totalDocs;
+        console.log(res.data.docs);
+        this.userData = res.data.docs;
+      });
   }
 
   detail(id: any) {}

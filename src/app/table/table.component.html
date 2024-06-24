@@ -22,7 +22,7 @@
         <td>{{ user.phone }}</td>
         <td>{{ user.address }}</td>
         <td> 
-          <span class="action-icon" routerLink='edit/{{user._id}}'>
+          <span class="action-icon" (click)="edit(user._id)">
             <i class="fas fa-edit"></i> Edit
           </span>
           <span class="action-icon" (click)="deleteUser(user._id)">
