@@ -12,6 +12,7 @@ import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { EditComponent } from './edit/edit.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { DetailComponent } from './detail/detail.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     TableComponent,
     PdfComponent,
     EditComponent,
+    DetailComponent,
   ],
   imports: [
     BrowserModule,

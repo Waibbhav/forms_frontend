@@ -74,5 +74,7 @@ export class TableComponent {
       });
   }
 
-  detail(id: any) {}
+  detail(id: any) {
+    this.router.navigate([`/edit/${id}`]);
+  }
 }
