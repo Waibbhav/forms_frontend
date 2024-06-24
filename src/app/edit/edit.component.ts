@@ -25,15 +25,16 @@ export class EditComponent {
   ) {}
 
   ngOnInit(): void {
-    this.route.paramMap.subscribe((params) => {
-      this.userId = params.get('id');
-      this.apiService.get(`/user/get/${this.userId}`).subscribe((res: any) => {
-        this.userData = res.data;
-        console.log(this.userData);
-        this.formInit();
-      });
-    });
+     this.route.paramMap.subscribe((params) => {
+       this.userId = params.get('id');
+       this.apiService.get(`/user/get/${this.userId}`).subscribe((res: any) => {
+         this.userData = res.data;
+         console.log(this.userData);
+         this.formInit();
+       });
+     });
   }
+
 
   formInit() {
     this.userForm = new FormGroup({
@@ -60,7 +61,7 @@ export class EditComponent {
       this.apiService.post('/user/update', this.userForm.value).subscribe(
         (res: any) => {
           this.apiService.alert(res.message, 'success');
-           this.router.navigate(['/']);
+          this.router.navigate(['/']);
         },
         (error) => {
           this.apiService.alert('Failed to update user account', 'error');
