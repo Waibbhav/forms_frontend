@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { FormComponent } from './form/form.component';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
-import { TableComponent } from './table/table.component'; 
+import { TableComponent } from './table/table.component';
 import { ApiService } from './services/api.service';
 import { PdfComponent } from './pdf/pdf.component';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
@@ -13,7 +13,9 @@ import { EditComponent } from './edit/edit.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { DetailComponent } from './detail/detail.component';
-
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,8 +28,11 @@ import { DetailComponent } from './detail/detail.component';
   imports: [
     BrowserModule,
     FormsModule,
+    MatCardModule,
+    MatButtonModule,
     MatPaginatorModule,
     ReactiveFormsModule,
+    MatIconModule,
     HttpClientModule,
     PdfViewerModule,
     RouterModule.forRoot([

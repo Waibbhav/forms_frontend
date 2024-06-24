@@ -1,20 +1,54 @@
+<!-- <div class="container">
+  <h2 class="heading">User Detail</h2>
+  <mat-card class="user-card">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>
+        <strong>Name:</strong> {{ userData.fullName }}
+      </mat-card-title>
+      <mat-card-subtitle>
+        <strong>Email:</strong> {{ userData.email }}
+      </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p><strong>Address:</strong> {{ userData.address }}</p>
+      <p><strong>Phone:</strong> {{ userData.phone }}</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" (click)="edit(userData._id)">
+        <mat-icon>edit</mat-icon> Edit
+      </button>
+      <button mat-raised-button color="accent" routerLink="/">
+        <mat-icon>arrow_back</mat-icon> Back
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div> -->
+
+
 <div class="container">
-    <h2 class="heading"> User Detail</h2>
-<mat-card class="user-card">
-  <mat-card-header>
-    <div mat-card-avatar class="example-header-image"></div>
-    <mat-card-title><strong>Name:</strong> {{ userData.fullName }}</mat-card-title>
-    <mat-card-subtitle><strong>Email:</strong> {{ userData.email }}</mat-card-subtitle>
-  </mat-card-header>
-  <mat-card-content>
-    <p><strong>Address:</strong> {{ userData.address }}</p>
-    <p><strong>Phone:</strong> {{ userData.phone }}</p>
-  </mat-card-content>
-  <mat-card-actions>
-  </mat-card-actions>
-</mat-card>
-      <button type="submit" class="btn btn-primary"  (click)="edit(userData._id)">edit</button>
-       <button type="button" class="btn btn-secondary ml-2" routerLink="/" >Back</button>
-
-  </div>
-
+  <h2 class="heading">User Detail</h2>
+  <mat-card class="user-card">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>
+        <strong>Name:</strong> {{ userData.fullName }}
+      </mat-card-title>
+      <mat-card-subtitle>
+        <strong>Email:</strong> {{ userData.email }}
+      </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p><strong>Address:</strong> {{ userData.address }}</p>
+      <p><strong>Phone:</strong> {{ userData.phone }}</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button class="btn-green" (click)="edit(userData._id)">
+        <mat-icon>edit</mat-icon> Edit
+      </button>
+      <button mat-raised-button class="btn-blue" routerLink="/">
+        <mat-icon>arrow_back</mat-icon> Back
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>
